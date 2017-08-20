@@ -7,4 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  submittedValue;
+  constructor() {}
+
+  onSubmit(value: any, valid: boolean) {
+    console.log('valid', valid);
+    console.log('value', value);
+  }
+
+  onReset() {
+    this.submittedValue = null;
+  }
+
+  onSubmit1(value: any, valid: boolean) {
+    if(valid === false) {
+      // form['_submitted'] = false;
+      return;
+    }
+  }
+  onSubmit2(value: any, valid: boolean) {
+    console.log('valid', valid);
+    console.log('value', value);
+  }
 }
