@@ -18,7 +18,7 @@ function validateEmptySpace(): ValidatorFn {
 
 }
 @Directive({
-  selector: '[emptySpace][ngModel]',
+  selector: '[emptySpace]',
   providers: [
     {provide: NG_VALIDATORS, useExisting: EmptySpaceValidator, multi: true}
   ]
@@ -34,5 +34,4 @@ export class EmptySpaceValidator implements Validator {
   validate(c: FormControl) {
     return this.validator(c);
   }
-
 }

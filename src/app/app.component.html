@@ -49,7 +49,7 @@
 </div>
 
 
-<div class="container">
+<!--<div class="container">
   <h2>form 2 custom validation</h2>
   <form #form2="ngForm" (ngSubmit)="onSubmit2(form2.value, form2.valid)" novalidate>
     <div class="form-group">
@@ -59,6 +59,25 @@
         Name is required
       </div>
       <div *ngIf="form2.submitted && name.errors && name.errors['emptySpace']" class="alert alert-danger">
+        Empty space is not allowed
+      </div>
+    </div>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+  </form>
+
+</div>-->
+
+
+<div class="container">
+  <h2>form 3 custom validation</h2>
+  <form #form3="ngForm" (ngSubmit)="onSubmit3(form3.value, form3.valid)" novalidate>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" ngModel name="name" #name="ngModel" required cannotContainSpace>
+      <div *ngIf="form3.submitted && name.errors && name.errors['required']" class="alert alert-danger">
+        Name is required
+      </div>
+      <div *ngIf="form3.submitted && name.errors && name.errors['cannotContainSpace']" class="alert alert-danger">
         Empty space is not allowed
       </div>
     </div>

@@ -29,4 +29,8 @@ export class AppComponent {
     console.log('valid', valid);
     console.log('value', value);
   }
+  onSubmit3(value: any, valid: boolean) {
+    console.log('valid', valid);
+    console.log('value', value);
+  }
 }
